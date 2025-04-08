@@ -1,6 +1,6 @@
-# Projeto Chatbot Bibl.AI para a disciplina de Inteligência Artificial na UFS
+# Projeto Bibl.IA para a disciplina de Inteligência Artificial na UFS
 
-Integrantes do grupo:
+Integrantes do grupo:  
 BRENNO DE FARO VIEIRA  
 DAVI SOUZA FONTES SANTOS  
 HUMBERTO DA CONCEIÇÃO JÚNIOR  
@@ -37,5 +37,5 @@ ollama pull llama3.1:8b-instruct-q4_K_S
 ```
 - Rodar o servidor:
 ```bash
-streamlit run .\biblIA5.py
+streamlit run .\biblIA.py
 ```
