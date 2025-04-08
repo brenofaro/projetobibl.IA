@@ -15,18 +15,18 @@ _ = load_dotenv(find_dotenv())
 
 # Configuração do servidor local do Ollama
 ollama_server_url = "http://127.0.0.1:11434"
-# Modelo de linguagem (Chat) que usaremos para gerar respostas
+# Modelo de linguagem ollama usado para gerar as respostas
 model_local = ChatOllama(model="llama3.1:8b-instruct-q4_K_S")
 
 # Função de carregamento e indexação dos dados do CSV
-# Utilizando o CSV fornecido pelo seu amigo (ex.: bible_questions.csv)
+# Utilizando o CSV (ex.: bible_questions.csv)
 @st.cache_resource
 def load_csv_data():
     # Carrega o conjunto de dados
     loader = CSVLoader(file_path="bible_questions.csv")
     documents = loader.load()
 
-    # Gerar embeddings a partir do modelo Ollama (mantendo a lógica do seu código)
+    # Gerar embeddings a partir do modelo Ollama
     embeddings = OllamaEmbeddings(
         base_url=ollama_server_url,
         model='nomic-embed-text'
@@ -41,10 +41,10 @@ def load_csv_data():
 # Obtém o retriever com os dados indexados
 retriever = load_csv_data()
 
-# Título da aplicação – você pode modificar conforme o seu projeto
+
 st.title("Oráculo Bíblico - Responda suas dúvidas")
 
-# Define o template de prompt (usando o modelo do seu amigo)
+# Template do prompt
 rag_template = """
 Você é um assistente que responde perguntas sobre a Bíblia. 
 Você deve responder com base no contexto fornecido, e baseado na base de dados fornecida para você. 
@@ -56,8 +56,6 @@ Pergunta: {question}
 prompt = ChatPromptTemplate.from_template(rag_template)
 
 # Cria o pipeline que recebe o prompt formatado e invoca o modelo de linguagem.
-# Note: Diferente do código original onde o retriever estava integrado na chain,
-# aqui executaremos a recuperação explicitamente antes de chamar a chain.
 chain = prompt | model_local
 
 # Inicializa o histórico de mensagens no session_state
