@@ -57,7 +57,7 @@ st.title("Oráculo Bíblico - Responda suas dúvidas")
 rag_template = """
 Você é um assistente que responde perguntas sobre a Bíblia. 
 Você deve responder com base no contexto fornecido, e baseado na base de dados fornecida para você. 
-Se não houver informações suficientes, diga que não sabe.
+Se não houver informações suficientes, de uma forma educada e amigável dizendo que não foi encontrada no contexto religioso.
 
 Contexto: {context}
 Pergunta: {question}
