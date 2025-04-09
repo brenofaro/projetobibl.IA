@@ -7,6 +7,9 @@ HUMBERTO DA CONCEIÇÃO JÚNIOR
 RAFAEL NASCIMENTO ANDRADE  
 NEWTON SOUZA SANTANA JÚNIOR  
 
+### Site do Projeto para testes
+
+[Bibl.IA](https://projetobibl-ia.onrender.com/)
 
 ### Requisitos para rodar o projeto
 - Python 3.8 ou superior
